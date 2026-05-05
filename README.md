@@ -37,7 +37,11 @@ The goal is to support better decision-making for students and families by simpl
 ### Development Tools
 
 - Visual Studio Code
-- GitHub (for project backup and version control)
+- GitHub (project backup, version control, and deployment repository)
+- MySQL Workbench (database management and SQL execution)
+- Render (web application deployment and hosting)
+- Aiven (cloud MySQL database hosting)
+
 
 ---
 
