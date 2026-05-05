@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northern Arizona University | Arizona University Information System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css') }}">
+</head>
+<body class="nau-page">
+  <header class="site-header university-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="/" class="logo">Arizona University Information System</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/uarizona">University of Arizona</a></li>
+        <li><a href="/nau" class="active">NAU</a></li>
+        <li><a href="/asu">ASU</a></li>
+        <li><a href="/compare">Compare</a></li>
+        <li><a href="/search">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="university-hero nau-hero">
+      <div class="hero-content">
+        <p class="eyebrow">Northern Arizona University</p>
+        <h1>Programs, admissions, transfer planning, financial aid, and student support resources.</h1>
+        <p>
+          This page helps Arizona students and families explore important Northern Arizona University information
+          in one organized place, especially for first-generation students, transfer students, and those planning
+          their college journey for the first time.
+        </p>
+      </div>
+    </section>
+
+    <section class="quick-nav-section" aria-label="Page sections">
+      <a href="#programs">Academic Programs</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#transfer">Transfer Pathways</a>
+      <a href="#financial-aid">Financial Aid</a>
+      <a href="#support">Support Programs</a>
+    </section>
+
+    <section class="university-content" id="programs">
+      <div class="section-header">
+        <p class="eyebrow">Academic Programs</p>
+        <h2>Undergraduate degree options</h2>
+      </div>
+
+      <p>
+        Northern Arizona University offers a wide variety of undergraduate degree programs designed to help students
+        explore career paths and academic opportunities.
+      </p>
+
+      <div class="info-card-grid">
+        {% for program in programs %}
+          <article class="info-card">
+            <h3>{{ program[0] }}</h3>
+          </article>
+        {% endfor %}
+      </div>
+
+      <a href="https://nau.edu/undergraduate-degrees/" class="source-link" target="_blank" rel="noopener">
+        Undergraduate Degrees Reference
+      </a>
+    </section>
+
+    <section class="university-content" id="admissions">
+      <div class="section-header">
+        <p class="eyebrow">Admissions</p>
+        <h2>Application guidance for different student types</h2>
+      </div>
+
+      <p>
+        Admissions at NAU are organized for first-year students, transfer students, international students,
+        and online learners.
+      </p>
+
+      <div class="info-card-grid">
+        {% for admission in admissions %}
+          <article class="info-card">
+            <h3>{{ admission[0] }}</h3>
+            <p>{{ admission[1] }}</p>
+            <p><strong>Deadline:</strong> {{ admission[2] }}</p>
+          </article>
+        {% endfor %}
+      </div>
+
+      <a href="https://nau.edu/admissions/" class="source-link" target="_blank" rel="noopener">
+        Admissions Reference
+      </a>
+    </section>
+
+    <section class="university-content" id="transfer">
+      <div class="section-header">
+        <p class="eyebrow">Transfer Pathways</p>
+        <h2>Community college to university transfer support</h2>
+      </div>
+
+      <p>
+        Transfer pathways are especially important for Arizona students who begin at community colleges before moving
+        to a four-year university. NAU provides transfer guides and credit evaluation tools that help students understand
+        how completed coursework applies toward a bachelor’s degree.
+      </p>
+
+      <div class="highlight-box">
+        <h3>Helpful for:</h3>
+        <ul>
+          <li>Community college transfer students</li>
+          <li>First-generation college students</li>
+          <li>Working adult learners</li>
+          <li>International transfer students</li>
+          <li>Students changing majors or institutions</li>
+        </ul>
+      </div>
+
+      <a href="https://nau.edu/transfer-nau/" class="source-link" target="_blank" rel="noopener">
+        Transfer Reference
+      </a>
+    </section>
+
+    <section class="university-content" id="financial-aid">
+      <div class="section-header">
+        <p class="eyebrow">Financial Aid</p>
+        <h2>Scholarships, grants, and cost planning</h2>
+      </div>
+
+      <p>
+        Financial aid at NAU includes scholarships, grants, loans, work-study opportunities, and tuition assistance programs.
+        Students are strongly encouraged to complete the FAFSA to qualify for federal and institutional aid.
+      </p>
+
+      <div class="support-grid">
+        {% for aid in financial_aid %}
+          <article class="support-card">
+            <h3>{{ aid[1] }}</h3>
+            <p><strong>Type:</strong> {{ aid[0] }}</p>
+            <p>{{ aid[2] }}</p>
+            <a href="{{ aid[3] }}" target="_blank" rel="noopener">Aid Reference</a>
+          </article>
+        {% endfor %}
+      </div>
+
+      <a href="https://nau.edu/financial-aid/" class="source-link" target="_blank" rel="noopener">
+        Financial Aid Reference
+      </a>
+    </section>
+
+    <section class="university-content" id="support">
+      <div class="section-header">
+        <p class="eyebrow">Support Programs</p>
+        <h2>Programs that improve student success</h2>
+      </div>
+
+      <div class="support-grid">
+        {% for support in support_programs %}
+          <article class="support-card">
+            <h3>{{ support[0] }}</h3>
+            <p>{{ support[1] }}</p>
+            <a href="{{ support[2] }}" target="_blank" rel="noopener">Program Reference</a>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer university-footer">
+    <p>&copy; 2026 Arizona University Information System. Senior Capstone Project.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
