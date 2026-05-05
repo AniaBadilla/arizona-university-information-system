@@ -146,23 +146,28 @@ This improves accessibility and helps students identify which university offers 
 
 The system includes navigation across all pages using a responsive layout for easier browsing.
 
----
+## Live Project Access
 
-## How to Run the Project
+The Arizona University Information System is deployed online and can be accessed directly through the public website link below:
 
-### Step 1: Install Required Software
+[Project Website](https://arizona-university-information-system.onrender.com)
 
-Install the following:
+Users can explore:
 
-- Python
-- Flask
-- MySQL Server
-- MySQL Workbench
-- Visual Studio Code
+- University information pages
+- Academic programs
+- Admissions requirements
+- Financial aid resources
+- Transfer pathways
+- Student support programs
+- University comparison tools
+- Program search functionality
 
-### Step 2: Import the Database
+No local installation is required to access the system.
 
-Open MySQL Workbench and run the SQL script for the project database:
+## Deployment Platform
 
-```sql
-CREATE DATABASE arizona_university_info;
+The project is deployed using:
+
+- Render (web application hosting)
+- Aiven (cloud MySQL database hosting)
